@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Assignment 2 - Covid Firebase</string>
+    <string name="alexg_info">Alex Giasson A00982145</string>
+    <string name="aidanw_info">Aidan Waterson A00000666</string>
+    <string name="cases_by_month_and_year">Cases by Month and Year</string>
+    <string name="cases_by_health_authority">Cases by Health Authority</string>
+    <string name="cases_by_gender">Cases by Gender</string>
+    <string name="cases_by_age_group">Cases by Age Group</string>
+    <string name="logout">Logout</string>
 </resources>
