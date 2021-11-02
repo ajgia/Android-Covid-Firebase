@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment2CovidFirebase">
         <activity
-            android:name=".LoginActivity"
+            android:name=".AuthenticationActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
