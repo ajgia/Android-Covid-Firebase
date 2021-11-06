@@ -3,7 +3,12 @@ package com.example.assignment2_covidfirebase;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import java.util.ArrayList;
 
 import com.google.firebase.database.DataSnapshot;
@@ -18,6 +23,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseCases;
     List<Case> caseList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         databaseCases
                 = FirebaseDatabase.getInstance().getReference("cases");
         caseList = new ArrayList<>();
+
+        Button returnBtn = findViewById(R.id.returnToAuthBtn);
+        returnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, AuthenticationActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override

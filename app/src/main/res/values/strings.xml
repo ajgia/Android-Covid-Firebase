@@ -2,6 +2,7 @@
     <string name="app_name">Assignment 2 - Covid Firebase</string>
     <string name="alexg_info">Alex Giasson A00982145</string>
     <string name="aidanw_info">Aidan Waterson A00000666</string>
+    <string name="auth_failure">Authentication Failure</string>
     <string name="cases_by_month_and_year">Cases by Month and Year</string>
     <string name="cases_by_health_authority">Cases by Health Authority</string>
     <string name="cases_by_gender">Cases by Gender</string>
@@ -12,4 +13,5 @@
     <string name="create_account">Create Account</string>
     <string name="login">Login</string>
     <string name="continue_">Continue</string>
+    <string name="return_to_auth">Return to Authentication</string>
 </resources>
