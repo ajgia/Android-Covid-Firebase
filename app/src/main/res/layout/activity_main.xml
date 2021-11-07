@@ -39,7 +39,10 @@
             android:text="@string/logout" />
 
     </LinearLayout>
-
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvCases"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"

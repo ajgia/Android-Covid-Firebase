@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -34,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Set up database
-        databaseCases = FirebaseDatabase.getInstance().getReference("cases");
+        databaseCases = FirebaseDatabase.getInstance().getReference();
         caseList = new ArrayList<Case>();
         lvCases = findViewById(R.id.lvCases);
+
+
 
         // Attach the TabPageAdapter to the ViewPager
         TabPageAdapter pagerAdapter = new TabPageAdapter(getSupportFragmentManager(), getApplicationContext() );
@@ -64,17 +67,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-//        databaseCases.addValueEventListener(new ValueEventListener() {
+//            databaseCases.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                caseList.clear();
-//                for (DataSnapshot dss : dataSnapshot.getChildren()) {
-//                    Case c = dss.getValue(Case.class);
-//                    caseList.add(c);
+//                if (dataSnapshot.exists()) {
+//                    caseList.clear();
+//                    for (DataSnapshot dss : dataSnapshot.getChildren()) {
+//
+//                        Case c = dss.getValue(Case.class);
+//                        caseList.add(c);
+//                    }
+//
+//                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
+//                    lvCases.setAdapter(adapter);
 //                }
 //
-//                CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
-//                lvCases.setAdapter(adapter);
 //
 //            }
 //
