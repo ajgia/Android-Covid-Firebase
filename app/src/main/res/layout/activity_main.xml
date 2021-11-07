@@ -15,8 +15,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/returnToAuthBtn"
-        android:text="@string/return_to_auth"
+        android:id="@+id/mainLogoutBtn"
+        android:text="@string/logout"
         android:layout_gravity="right"/>
 
     <LinearLayout

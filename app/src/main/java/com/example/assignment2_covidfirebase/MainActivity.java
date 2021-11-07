@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
                 = FirebaseDatabase.getInstance().getReference("cases");
         caseList = new ArrayList<>();
 
-        Button returnBtn = findViewById(R.id.returnToAuthBtn);
-        returnBtn.setOnClickListener(new View.OnClickListener() {
+        Button logoutBtn = findViewById(R.id.mainLogoutBtn);
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
                 Intent i = new Intent(MainActivity.this, AuthenticationActivity.class);
                 startActivity(i);
             }
