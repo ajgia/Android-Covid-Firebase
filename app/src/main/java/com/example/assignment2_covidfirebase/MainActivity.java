@@ -46,10 +46,7 @@ public class MainActivity extends AppCompatActivity {
         // Attach the ViewPager to the TabLayout
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(pager);
-
-        // enable action bar
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
-
+        
         databaseCases
                 = FirebaseDatabase.getInstance().getReference("cases");
         caseList = new ArrayList<>();
