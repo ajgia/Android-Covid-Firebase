@@ -21,7 +21,7 @@ public class AgeFragment extends Fragment {
 
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         for (Case c: caseList) {
-            String key = c.getSex();
+            String key = c.getAge_Group();
             map.merge(key, 1, Integer::sum);
         }
 
