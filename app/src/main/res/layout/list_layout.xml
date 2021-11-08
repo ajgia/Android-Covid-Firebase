@@ -6,17 +6,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewAge"/>
+        android:id="@+id/textViewAge"
+        android:text="TextView"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewDate"/>
+        android:id="@+id/textViewDate"
+        android:text="TextView"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewHA"/>
+        android:id="@+id/textViewHA"
+        android:text="TextView"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewGender"/>
+        android:id="@+id/textViewGender"
+        android:text="TextView"/>
 </LinearLayout>

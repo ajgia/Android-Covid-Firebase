@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     List<Case> caseList;
     ListView lvCases;
 
+    TextView count;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +40,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Set up database
         databaseCases = FirebaseDatabase.getInstance().getReference();
-        caseList = new ArrayList<Case>();
+
         lvCases = findViewById(R.id.lvCases);
+        caseList = new ArrayList<Case>();
 
+//        caseList.add(new Case("18-29", "vancouver", "2021-01-02", "M"));
+//        CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
+//        lvCases.setAdapter(adapter);
 
-
+//        UI Controls
+        count = findViewById(R.id.count);
         // Attach the TabPageAdapter to the ViewPager
         TabPageAdapter pagerAdapter = new TabPageAdapter(getSupportFragmentManager(), getApplicationContext() );
         ViewPager pager = findViewById(R.id.pager);
@@ -67,28 +76,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-//            databaseCases.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                if (dataSnapshot.exists()) {
-//                    caseList.clear();
-//                    for (DataSnapshot dss : dataSnapshot.getChildren()) {
-//
-//                        Case c = dss.getValue(Case.class);
-//                        caseList.add(c);
-//                    }
-//
-//                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
-//                    lvCases.setAdapter(adapter);
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) { }
-//        });
+            databaseCases.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    caseList.clear();
+                    for (DataSnapshot dss : dataSnapshot.getChildren()) {
+
+                        Case c = dss.getValue(Case.class);
+                        caseList.add(c);
+                    }
+                    count.setText(Long.toString(dataSnapshot.getChildrenCount()));
+
+                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
+                    lvCases.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) { }
+        });
     }
+
 
 
 }
