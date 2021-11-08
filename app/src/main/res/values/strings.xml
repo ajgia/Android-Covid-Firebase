@@ -14,4 +14,8 @@
     <string name="login">Login</string>
     <string name="continue_">Continue</string>
     <string name="return_to_auth">Return to Authentication</string>
+    <string name="gender_tab">Gender</string>
+    <string name="age_tab">Age</string>
+    <string name="ha_tab">HA</string>
+    <string name="date_tab">Date</string>
 </resources>

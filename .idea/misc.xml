@@ -5,6 +5,12 @@
       <map>
         <entry key="app/src/main/res/layout/activity_authentication.xml" value="0.22552083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28515590209547387" />
+        <entry key="app/src/main/res/layout/fragment_age.xml" value="0.19300911854103345" />
+        <entry key="app/src/main/res/layout/fragment_date.xml" value="0.19300911854103345" />
+        <entry key="app/src/main/res/layout/fragment_gender.xml" value="0.19300911854103345" />
+        <entry key="app/src/main/res/layout/fragment_ha.xml" value="0.19300911854103345" />
+        <entry key="app/src/main/res/layout/fragment_top.xml" value="0.2341485507246377" />
+        <entry key="app/src/main/res/layout/list_layout.xml" value="0.19300911854103345" />
       </map>
     </option>
   </component>
