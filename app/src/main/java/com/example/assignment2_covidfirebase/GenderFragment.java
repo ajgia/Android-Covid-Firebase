@@ -43,41 +43,10 @@ public class GenderFragment extends Fragment {
         }
 
         lvGender = view.findViewById(R.id.lvGender);
-        GenderListAdapter adapter = new GenderListAdapter(getActivity(), resultList);
+        CountingListAdapter adapter = new CountingListAdapter(getActivity(), resultList);
         lvGender.setAdapter(adapter);
 
 
         return view;
     }
-
-    public class GenderListAdapter extends ArrayAdapter<String> {
-        private Activity context;
-        private List<String> genderList;
-
-        public GenderListAdapter(Activity context, List<String> genderList) {
-            super(context, R.layout.list_layout, genderList);
-            this.context = context;
-            this.genderList = genderList;
-        }
-
-        public GenderListAdapter(Context context, int resource, List<String> objects, Activity context1, List<String> genderList) {
-            super(context, resource, objects);
-            this.context = context1;
-            this.genderList = genderList;
-        }
-
-        @NonNull
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater inflater = context.getLayoutInflater();
-            View listViewItem = inflater.inflate(R.layout.list_layout_gender, null, true);
-            TextView tvName = listViewItem.findViewById(R.id.textViewGender);
-            String genderString = genderList.get(position);
-            tvName.setText(genderString);
-            return listViewItem;
-        }
-
-    }
-
-
 }
