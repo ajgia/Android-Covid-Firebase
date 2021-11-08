@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -21,12 +22,14 @@ public class CountingListAdapter extends ArrayAdapter<String> {
         super(context, R.layout.list_layout, countList);
         this.context = context;
         this.countList = countList;
+        Collections.sort(countList);
     }
 
     public CountingListAdapter(Context context, int resource, List<String> objects, Activity context1, List<String> countList) {
         super(context, resource, objects);
         this.context = context1;
         this.countList = countList;
+        Collections.sort(countList);
     }
 
     @NonNull
