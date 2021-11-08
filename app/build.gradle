@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.assignment2_covidfirebase"
+        applicationId "com.example.giasson_waterson"
         minSdk 27
         targetSdk 31
         versionCode 1

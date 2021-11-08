@@ -1,4 +1,4 @@
-package com.example.assignment2_covidfirebase;
+package com.example.giasson_waterson;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.assignment2_covidfirebase", appContext.getPackageName());
+        assertEquals("com.example.giasson_waterson", appContext.getPackageName());
     }
 }

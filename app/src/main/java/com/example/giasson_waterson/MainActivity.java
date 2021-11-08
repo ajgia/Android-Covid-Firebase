@@ -1,4 +1,4 @@
-package com.example.assignment2_covidfirebase;
+package com.example.giasson_waterson;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

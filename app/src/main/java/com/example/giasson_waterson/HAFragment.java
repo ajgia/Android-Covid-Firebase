@@ -1,4 +1,4 @@
-package com.example.assignment2_covidfirebase;
+package com.example.giasson_waterson;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,19 +18,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GenderFragment extends Fragment {
+public class HAFragment extends Fragment {
     ArrayList<Case> caseList;
-    ListView lvGender;
+    ListView lvHA;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_gender, container, false);
+        View view = inflater.inflate(R.layout.fragment_ha, container, false);
         MainActivity activity = (MainActivity) getActivity();
         caseList = activity.getCaseList();
 
         HashMap<String, Integer> map = new HashMap<String, Integer>();
         for (Case c: caseList) {
-            String key = c.getSex();
+            String key = c.getHA();
             map.merge(key, 1, Integer::sum);
         }
 
@@ -42,9 +42,9 @@ public class GenderFragment extends Fragment {
             resultList.add(listEntry);
         }
 
-        lvGender = view.findViewById(R.id.lvGender);
+        lvHA = view.findViewById(R.id.lvHA);
         CountingListAdapter adapter = new CountingListAdapter(getActivity(), resultList);
-        lvGender.setAdapter(adapter);
+        lvHA.setAdapter(adapter);
 
 
         return view;
