@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseCases;
-    List<Case> caseList;
+    public List<Case> caseList;
     ListView lvCases;
 
     TextView count;
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         // Set up database
         databaseCases = FirebaseDatabase.getInstance().getReference();
 
-        lvCases = findViewById(R.id.lvCases);
         caseList = new ArrayList<Case>();
 
 //        caseList.add(new Case("18-29", "vancouver", "2021-01-02", "M"));
@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public List<Case> getCaseList() {
+        return caseList;
+    }
 
     @Override
     protected void onStart() {
@@ -88,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     count.setText(Long.toString(dataSnapshot.getChildrenCount()));
 
-                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
-                    lvCases.setAdapter(adapter);
+//                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
+//                    lvCases.setAdapter(adapter);
                 }
             }
 

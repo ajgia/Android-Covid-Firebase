@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class TabPageAdapter extends FragmentPagerAdapter {
     Context context;
 
+
     public TabPageAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
