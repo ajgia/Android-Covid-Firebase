@@ -29,7 +29,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseCases;
-    public List<Case> caseList;
+    public ArrayList<Case> caseList;
     TextView count;
 
     @Override
@@ -41,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
         databaseCases = FirebaseDatabase.getInstance().getReference();
 
         caseList = new ArrayList<Case>();
-
-//        caseList.add(new Case("18-29", "vancouver", "2021-01-02", "M"));
-//        CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
-//        lvCases.setAdapter(adapter);
 
 //        UI Controls
         count = findViewById(R.id.count);
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public List<Case> getCaseList() {
+    public ArrayList<Case> getCaseList() {
         return caseList;
     }
 
@@ -88,9 +84,6 @@ public class MainActivity extends AppCompatActivity {
                         caseList.add(c);
                     }
                     count.setText(Long.toString(dataSnapshot.getChildrenCount()));
-
-//                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
-//                    lvCases.setAdapter(adapter);
                 }
             }
 

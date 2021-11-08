@@ -10,10 +10,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class DateFragment extends Fragment {
-    List<Case> caseList;
+    ArrayList<Case> caseList;
     ListView lvCases;
     EditText textFilter;
     Button findBtn;
