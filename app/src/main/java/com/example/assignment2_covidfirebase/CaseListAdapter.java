@@ -13,26 +13,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class CaseListAdapter extends ArrayAdapter<Case> implements Filterable {
 
     private Activity context;
-    private List<Case> caseList;
+    private List<Case> originalList;
+    private List<Case > caseList;
     private Filter filter;
 
-    public CaseListAdapter(Activity context, List<Case> caseList) {
-        super(context, R.layout.list_layout, caseList);
+    public CaseListAdapter(Activity context, List<Case> originalList) {
+        super(context, R.layout.list_layout, originalList);
         this.context = context;
-        this.caseList = caseList;
+        this.originalList = originalList;
+        this.caseList = originalList;
     }
 
     public CaseListAdapter(Context context, int resource, List<Case> objects,
-                           Activity context1, List<Case> caseList) {
+                           Activity context1, List<Case> originalList) {
         super(context, resource, objects);
         this.context = context1;
-        this.caseList = caseList;
+        this.originalList = originalList;
+        this.caseList = originalList;
     }
 
     @NonNull
@@ -55,6 +57,7 @@ public class CaseListAdapter extends ArrayAdapter<Case> implements Filterable {
 
         return listViewItem;
     }
+
     @Override
     public Filter getFilter() {
         Filter filter = new Filter() {
@@ -68,25 +71,23 @@ public class CaseListAdapter extends ArrayAdapter<Case> implements Filterable {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
                 String filterSeq = constraint.toString();
-                FilterResults results = new FilterResults();
-                ArrayList<Case> filtered = new ArrayList<Case>();
+                FilterResults filterResults = new FilterResults();
+                if (filterSeq == null || filterSeq.isEmpty() ) {
+                    filterResults.values = originalList;
+                    filterResults.count = originalList.size();
+                }
 
-                if (filterSeq != null && filterSeq.length() > 0 ) {
-                    for (Case c: caseList) {
+                else {
+                    List<Case> filtered = new ArrayList<Case>();
+                    for (Case c: originalList) {
                         if (c.getReported_Date().contains(filterSeq))
                             filtered.add(c);
                     }
-                    results.count = filtered.size();
-                    results.values = filtered;
-                } else {
-                    synchronized (this) {
-                        results.values = caseList;
-                        results.count = caseList.size();
-                    }
+                    filterResults.values = filtered;
+                    filterResults.count = filtered.size();
                 }
 
-
-                return results;
+                return filterResults;
             }
 
 
@@ -94,3 +95,5 @@ public class CaseListAdapter extends ArrayAdapter<Case> implements Filterable {
         return filter;
     }
 }
+
+

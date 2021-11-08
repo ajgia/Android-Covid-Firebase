@@ -19,5 +19,5 @@
     <string name="ha_tab">HA</string>
     <string name="date_tab">Date</string>
     <string name="find">Find</string>
-    <string name="filter">Filter</string>
+    <string name="date_filter">Date Filter</string>
 </resources>

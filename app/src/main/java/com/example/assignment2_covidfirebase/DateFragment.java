@@ -14,7 +14,6 @@ import java.util.List;
 
 public class DateFragment extends Fragment {
     List<Case> caseList;
-    List<Case> filteredList;
     ListView lvCases;
     EditText textFilter;
     Button findBtn;
@@ -37,11 +36,7 @@ public class DateFragment extends Fragment {
         findBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 adapter.getFilter().filter(textFilter.getText().toString());
-
-
             }
         });
 
