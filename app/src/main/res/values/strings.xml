@@ -20,4 +20,6 @@
     <string name="date_tab">Date</string>
     <string name="find">Find</string>
     <string name="date_filter">Date Filter</string>
+    <string name="please_click_around_while_things_load">Please click around while items load</string>
+    <string name="items_loaded">items loaded</string>
 </resources>

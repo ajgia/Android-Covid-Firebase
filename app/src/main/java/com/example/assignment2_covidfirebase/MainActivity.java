@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                         Case c = dss.getValue(Case.class);
                         caseList.add(c);
                     }
-                    count.setText(Long.toString(dataSnapshot.getChildrenCount()));
+                    count.setText(Long.toString(dataSnapshot.getChildrenCount()) + " " + getString(R.string.items_loaded));
                 }
             }
 

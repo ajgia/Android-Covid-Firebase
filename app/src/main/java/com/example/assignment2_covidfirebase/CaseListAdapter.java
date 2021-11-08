@@ -64,7 +64,10 @@ public class CaseListAdapter extends ArrayAdapter<Case> implements Filterable {
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                caseList = (List<Case>) results.values;
+                if (results.count != 0)
+                    caseList = (List<Case>) results.values;
+                else
+                    caseList = originalList;
                 notifyDataSetChanged();
             }
 

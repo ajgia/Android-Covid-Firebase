@@ -41,7 +41,7 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="count"
+        android:text="@string/please_click_around_while_things_load"
         android:id="@+id/count" />
 
     <androidx.viewpager.widget.ViewPager
