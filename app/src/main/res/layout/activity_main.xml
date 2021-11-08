@@ -44,10 +44,7 @@
         android:text="count"
         android:id="@+id/count"
         />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lvCases"/>
+
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"

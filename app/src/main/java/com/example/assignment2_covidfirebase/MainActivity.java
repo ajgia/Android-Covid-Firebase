@@ -70,32 +70,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    public List<Case> getCaseList() {
+        return caseList;
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-            databaseCases.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    caseList.clear();
-                    for (DataSnapshot dss : dataSnapshot.getChildren()) {
-
-                        Case c = dss.getValue(Case.class);
-                        caseList.add(c);
-                    }
-                    count.setText(Long.toString(dataSnapshot.getChildrenCount()));
-
-                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
-                    lvCases.setAdapter(adapter);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) { }
-        });
+//            databaseCases.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if (dataSnapshot.exists()) {
+//                    caseList.clear();
+//                    for (DataSnapshot dss : dataSnapshot.getChildren()) {
+//
+//                        Case c = dss.getValue(Case.class);
+//                        caseList.add(c);
+//                    }
+//                    count.setText(Long.toString(dataSnapshot.getChildrenCount()));
+//
+//                    CaseListAdapter adapter = new CaseListAdapter(MainActivity.this, caseList);
+//                    lvCases.setAdapter(adapter);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) { }
+//        });
     }
 
 
