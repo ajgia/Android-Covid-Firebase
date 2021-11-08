@@ -41,5 +41,18 @@
         android:text="@string/continue_"
         android:id="@+id/continueBtn"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aidanw_info" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alexg_info" />
+    </LinearLayout>
 </LinearLayout>
 
