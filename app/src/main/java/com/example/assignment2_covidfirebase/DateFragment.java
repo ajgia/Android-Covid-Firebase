@@ -1,18 +1,24 @@
 package com.example.assignment2_covidfirebase;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
-
 import java.util.List;
 
 public class DateFragment extends Fragment {
     List<Case> caseList;
+    List<Case> filteredList;
     ListView lvCases;
+    EditText textFilter;
+    Button findBtn;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -21,8 +27,24 @@ public class DateFragment extends Fragment {
         caseList = activity.getCaseList();
 
         lvCases = view.findViewById(R.id.lvCases);
+        textFilter = view.findViewById(R.id.datePicker);
+        findBtn = view.findViewById(R.id.findBtn);
+
         CaseListAdapter adapter = new CaseListAdapter(getActivity(), caseList);
         lvCases.setAdapter(adapter);
+        lvCases.setTextFilterEnabled(true);
+
+        findBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                adapter.getFilter().filter(textFilter.getText().toString());
+
+
+            }
+        });
+
         return view;
     }
 }

@@ -30,8 +30,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseCases;
     public List<Case> caseList;
-    ListView lvCases;
-
     TextView count;
 
     @Override
