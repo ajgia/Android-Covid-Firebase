@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class GenderFragment extends Fragment {
     ArrayList<Case> caseList;
-    ListView lvAge;
+    ListView lvGender;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,9 +42,9 @@ public class GenderFragment extends Fragment {
             resultList.add(listEntry);
         }
 
-        lvAge = view.findViewById(R.id.lvAge);
+        lvGender = view.findViewById(R.id.lvGender);
         GenderListAdapter adapter = new GenderListAdapter(getActivity(), resultList);
-        lvAge.setAdapter(adapter);
+        lvGender.setAdapter(adapter);
 
 
         return view;
